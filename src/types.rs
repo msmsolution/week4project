@@ -110,6 +110,9 @@ pub struct InitArgs {
     pub logo: Option<LogoResult>,
     pub name: String,
     pub symbol: String,
+    pub minted: u64,
+    pub burned: u64,
+    pub total_supply: u64,
 }
 
 #[derive(CandidType, Deserialize)]

@@ -8,7 +8,7 @@ extern crate serde;
 mod http;
 mod types;
 
-use std::borrow::Cow;
+use std::{borrow::Cow, os::linux::raw::stat};
 use std::cell::RefCell;
 use std::collections::HashSet;
 use std::convert::TryFrom;
@@ -61,6 +61,9 @@ fn init(args: InitArgs) {
         state.name = args.name;
         state.symbol = args.symbol;
         state.logo = args.logo;
+        state.minted = 0;
+        state.burned = 0;
+        state.total_supply = 0;
     });
 }
 
